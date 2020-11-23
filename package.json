@@ -1,0 +1,23 @@
+{
+  "name": "TrainTicketApplication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuncheria-Kuruvilla/TrainTicketApplication.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kuncheria-Kuruvilla/TrainTicketApplication/issues"
+  },
+  "homepage": "https://github.com/Kuncheria-Kuruvilla/TrainTicketApplication#readme",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
+}
