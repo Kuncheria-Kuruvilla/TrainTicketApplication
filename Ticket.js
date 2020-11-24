@@ -8,9 +8,6 @@ class Ticket{
     this.ticketFare = ticketFare;
     this.dateTime = dateTime;
   }
-  print(ticketPrinter){
-    ticketPrinter.print({...this});
-  }
 }
 
 module.exports = Ticket

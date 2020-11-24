@@ -9,7 +9,7 @@ chalk`
       |{yellow.italic ${getDate(dateTime)} || ${getTime(dateTime)}}
       |${source}
       |${destination}
-      |${isReturn && source}
+      |${isReturn ? source: ''}
       |${distance} stops
       |${ticketFare}
       `
