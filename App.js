@@ -1,6 +1,9 @@
-const ConsoleTicketPrinter = require('./Printer/ConsoleTicketPrinter')
 const inquirer = require('inquirer');
-var clear = require('clear');
+const clear = require('clear');
+const chalk = require('chalk')
+var figlet = require('figlet');
+
+const ConsoleTicketPrinter = require('./Printer/ConsoleTicketPrinter')
 const ticketIssuer = require('./TicketIssuer')
 const {consoleTicketFormatter} = require('./TicketFormater')
 const {STATIONS} = require('./Stations')
@@ -64,7 +67,7 @@ class App {
 
   async run(){
     while(true){
-      console.log('ISSUE NEW TICKET')
+      console.log(chalk`{cyan.bold ${figlet.textSync('Print my ticket','Small')}}`);
       const {source,destination,isReturn,age} = await inquirer.prompt(ticketQuestions)
       const t =  ticketIssuer.create({source,destination,isReturn,age})
       this.printer.print(t);
