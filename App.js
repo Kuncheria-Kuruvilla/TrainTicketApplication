@@ -2,7 +2,7 @@ const ConsoleTicketPrinter = require('./Printer/ConsoleTicketPrinter')
 const inquirer = require('inquirer');
 var clear = require('clear');
 const ticketIssuer = require('./TicketIssuer')
-const {chalkFormat} = require('./TicketFormater')
+const {consoleTicketFormatter} = require('./TicketFormater')
 const {STATIONS} = require('./Stations')
 
 inquirer.registerPrompt("search-list", require("inquirer-search-list"));
@@ -59,7 +59,7 @@ const continueQuestion = [
 ]
 class App {
   constructor(){
-    this.printer =  new ConsoleTicketPrinter(chalkFormat);
+    this.printer =  new ConsoleTicketPrinter(consoleTicketFormatter);
   }
 
   async run(){
