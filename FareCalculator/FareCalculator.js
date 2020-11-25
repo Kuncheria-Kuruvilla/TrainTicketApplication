@@ -23,9 +23,9 @@ const regularFare = ({source,destination}) => {
     }
   }
 
-const childrenFare = (regularFare) => regularFare * CHILDREN_DISCOUNT;
+const childrenFare = (regularFare) => (regularFare * CHILDREN_DISCOUNT).toFixed(2);
 
-const returnFare = (regularFare) => regularFare * TWO_WAY_TICKET_MULTIPLIER;
+const returnFare = (regularFare) => (regularFare * TWO_WAY_TICKET_MULTIPLIER).toFixed(2);
 
 class FareCalculator {
   getFare({source,destination,age,isReturn}){
