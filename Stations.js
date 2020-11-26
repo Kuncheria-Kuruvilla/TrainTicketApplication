@@ -21,10 +21,6 @@ const STATIONS={
 
 const NUMBER_OF_STATIONS = Object.keys(STATIONS).length;
 
-// const getDistance = (source,destination) => {
-//   STATION[source] &&  STATION[destination] ? Math.abs(STATION[destination] - STATION[source]) : null
-// }
-
 const getDistance = (source,destination) => Math.abs(STATIONS[destination] - STATIONS[source])
 
 module.exports = {getDistance,NUMBER_OF_STATIONS,STATIONS:Object.keys(STATIONS)}

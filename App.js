@@ -3,8 +3,8 @@ const clear = require('clear');
 const chalk = require('chalk')
 var figlet = require('figlet');
 
-const ConsoleTicketPrinter = require('./Printer/ConsoleTicketPrinter')
-const ticketIssuer = require('./TicketIssuer')
+const {ConsoleTicketPrinter} = require('./Printer')
+const {ChennaiTicketIssuer} = require('./TicketIssuer')
 const {consoleTicketFormatter} = require('./TicketFormater')
 const {STATIONS} = require('./Stations')
 
@@ -63,13 +63,14 @@ const continueQuestion = [
 class App {
   constructor(){
     this.printer =  new ConsoleTicketPrinter(consoleTicketFormatter);
+    this.ticketIssuer = new ChennaiTicketIssuer();
   }
 
   async run(){
     while(true){
       console.log(chalk`{cyan.bold ${figlet.textSync('Print my ticket','Small')}}`);
       const {source,destination,isReturn,age} = await inquirer.prompt(ticketQuestions)
-      const t =  ticketIssuer.create({source,destination,isReturn,age})
+      const t =  this.ticketIssuer.create({source,destination,isReturn,age})
       this.printer.print(t);
       await inquirer.prompt(continueQuestion)
       clear();
