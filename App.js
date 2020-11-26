@@ -68,12 +68,19 @@ class App {
 
   async run(){
     while(true){
-      console.log(chalk`{cyan.bold ${figlet.textSync('Print my ticket','Small')}}`);
-      const {source,destination,isReturn,age} = await inquirer.prompt(ticketQuestions)
-      const t =  this.ticketIssuer.create({source,destination,isReturn,age})
-      this.printer.print(t);
-      await inquirer.prompt(continueQuestion)
-      clear();
+      try{
+        console.log(chalk`{cyan.bold ${figlet.textSync('Print my  ticket','Small')}}`);
+        const {source,destination,isReturn,age} = await inquirer.prompt (ticketQuestions)
+        const t =  this.ticketIssuer.create({source,destination,  isReturn,age})
+        this.printer.print(t);
+        await inquirer.prompt(continueQuestion)
+        clear();
+      }
+      catch(err){
+        console.log(chalk`\n{bgRed.bold ERROR} {red Something went wrong}`)
+        await inquirer.prompt(continueQuestion)
+        clear();
+      }
     }
   }
 }
