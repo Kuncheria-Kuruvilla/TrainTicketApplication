@@ -8,4 +8,4 @@ Try out in [Repl.it] (https://repl.it/@KuncheriaKuruvi/TrainTicketApplication)
 
 MIT © Kuncheriya Kuruvila
 
-![Visitor Badge](https://github.com/Kuncheria-Kuruvilla/TrainTicketApplication)
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=https://github.com/Kuncheria-Kuruvilla/TrainTicketApplication)
